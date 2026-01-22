@@ -25,7 +25,7 @@ jobs:
           - platform: "ubuntu-22.04"
             args: "--bundles deb"
           - platform: "ubuntu-22.04-arm"
-            args: "--bundles deb arm"
+            args: "--bundles deb"
           - platform: "ubuntu-22.04"
             args: "--bundles rpm"
           - platform: "ubuntu-22.04"
@@ -141,7 +141,7 @@ jobs:
 
       - name: Upload Linux DEB ARM
         uses: actions/upload-artifact@v4
-        if: matrix.platform == 'ubuntu-22.04-arm' && matrix.args == '--bundles deb arm'
+        if: matrix.platform == 'ubuntu-22.04-arm' && matrix.args == '--bundles deb'
         with:
           name: linux-deb-arm
           path: ${{ github.workspace }}/src-tauri/target/release/bundle/**/*.deb
